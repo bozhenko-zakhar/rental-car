@@ -1,0 +1,33 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 24px 120px;
+
+	background: var(--badges);
+	border-bottom: 1px solid var(--badges);
+}
+
+.logo {
+	width: 104px;
+	height: 16px;
+}
+
+.nav_items {
+	display: flex;
+	gap: 32px
+}
+
+.nav_item a {
+	font-family: var(--font-family);
+	font-weight: 500;
+	line-height: 1.25;
+	text-align: center;
+	text-decoration-line: none;
+
+	color: var(--font-family);
+}
+
+.nav_item:hover {
+	color: var(--button-hover);
+}

@@ -1,0 +1,42 @@
+.button {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+
+	background: var(--button);
+	border: none;
+	border-radius: 12px;
+	padding-block: 12px;
+
+	font-family: var(--font-family);
+	font-weight: 600;
+	line-height: 1.25;
+	color: var(--white);
+}
+
+.button:hover {
+	background: var(--button-hover);
+}
+
+.button_large {
+	width: 276px;
+	height: 44px;
+}
+
+.button_small {
+	width: 156px;
+	height: 44px;
+}
+
+.loadmore {
+	background: transparent;
+	border: 1px solid var(--button);
+
+	color: var(--main);
+}
+
+.loadmore:hover {
+	background: transparent;
+	border: 1px solid var(--button-hover);
+}

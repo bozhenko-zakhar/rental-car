@@ -1,8 +1,12 @@
+"use client"
+
+import SearchBlock from "@/componenets/SearchBlock/SearchBlock";
+
 const CatalogPage = () => {
 	return (
-		<div>
-			<h2>CatalogPage</h2>
-		</div>
+		<section>
+			<SearchBlock /> 
+		</section>
 	)
 };
 

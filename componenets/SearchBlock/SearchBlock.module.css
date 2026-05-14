@@ -1,0 +1,32 @@
+.form {
+	display: flex;
+}
+
+.select {
+	background: var(--inputs);
+	border: none;
+
+	border-radius: 12px;
+	padding: 12px 16px;
+	width: 204px;
+	height: 44px;
+
+	font-family: var(--font-family);
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.25;
+
+	color: var(--main);
+}
+
+.select:focus {
+	outline: none;
+}
+
+.select option {
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.25;
+	color: var(--gray);
+}
