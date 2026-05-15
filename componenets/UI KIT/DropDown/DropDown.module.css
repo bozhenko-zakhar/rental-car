@@ -5,8 +5,14 @@
 	background: var(--inputs);
 	border-radius: 12px;
 	padding: 12px 16px;
+}
 
+.select.first {
 	width: 204px;
+}
+
+.select.second {
+	width: 196px
 }
 
 .select p {

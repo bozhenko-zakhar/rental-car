@@ -1,11 +1,19 @@
 .header {
+	padding-block: 24px;
+	background: var(--badges);
+	border-bottom: 1px solid var(--badges);
+}
+
+.header > .container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 24px 120px;
+	padding-inline: 120px;
+}
 
-	background: var(--badges);
-	border-bottom: 1px solid var(--badges);
+.container {
+	max-width: 1200px;
+	margin-inline: auto;
 }
 
 .logo {

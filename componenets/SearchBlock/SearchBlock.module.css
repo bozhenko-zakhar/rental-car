@@ -1,9 +1,10 @@
 .form {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: flex-end;
 	gap: 16px;
 
-	width: max-content;
+	max-width: 924px;
 	margin-inline: auto;
 }
 
@@ -49,8 +50,7 @@
 .input {
 	background: var(--inputs);
 	border: none;
-	/* border-right: 1px solid var(--gray-light); */
-	border-radius: 12px /* 12px 0 0 12px */;
+	border-radius: 12px;
 	width: 160px;
 	height: 44px;
 	padding: 12px 24px;

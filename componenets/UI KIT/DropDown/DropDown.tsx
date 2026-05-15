@@ -54,7 +54,7 @@ const DropDown = ({ options, selectId, selectName, selectedOption, setOption }: 
 				aria-activedescendant={selectedOption ?? undefined}
 				
 				onClick={() => setOpened(!isOpened)}
-				className={css.select}
+				className={`${css.select} ${selectName === "price" ? css.second : css.first}`}
 				onKeyDown={handleSelectSwithing}
 			>
 				<p>{selectedOption}</p>
@@ -65,14 +65,14 @@ const DropDown = ({ options, selectId, selectName, selectedOption, setOption }: 
 			<div className={css.scroll_fix}>
 				<ul
 					role="listbox"
-					id={`${selectId}-${selectName}-list`} // id={`${selectId}-option-${option}`}
+					id={`${selectId}-${selectName}-list`}
 					className={css.menu}
 				>
 					{
 						options.map(option => (
 							<li
 								key={option}
-								id={`${selectId}-${option}`}
+								id={`${selectId}-option-${option}`}
 								role="option"
 								aria-selected={selectedOption === option}
 								onClick={() => {
