@@ -1,6 +1,10 @@
 .form {
 	display: flex;
+	align-items: flex-end;
 	gap: 16px;
+
+	width: max-content;
+	margin-inline: auto;
 }
 
 .select {
@@ -32,8 +36,10 @@
 	color: var(--gray);
 }
 
-.input_box > p,
 .input_box > label {
+	display: block;
+	margin-bottom: 8px;
+
 	font-family: var(--font-family);
 	font-size: 12px;
 	line-height: 1.33333;

@@ -13,6 +13,8 @@
 	font-weight: 600;
 	line-height: 1.25;
 	color: var(--white);
+
+	cursor: pointer;
 }
 
 .button:hover {

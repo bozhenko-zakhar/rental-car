@@ -3,6 +3,7 @@
 import { useId, useState } from "react";
 import DropDown from "../UI KIT/DropDown/DropDown";
 import css from "./SearchBlock.module.css"
+import Button from "../UI KIT/Button/Button";
 
 const brandOptions: string[] = [
 	"Aston Martin",
@@ -69,6 +70,8 @@ const SearchBlock = () => {
 					/>
 				</div>
 			</div>
+
+			<Button isLarge={false}>Search</Button>
 		</form>
 	)
 };

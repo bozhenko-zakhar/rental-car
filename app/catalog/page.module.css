@@ -1,0 +1,10 @@
+.catalog {
+	margin-inline: auto;
+	padding-top: 84px;
+	padding-bottom: 124px;
+}
+
+.container {
+	max-width: 1200px;
+	margin-inline: auto;
+}
