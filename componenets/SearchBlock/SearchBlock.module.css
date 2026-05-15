@@ -1,5 +1,6 @@
 .form {
 	display: flex;
+	gap: 16px;
 }
 
 .select {
@@ -29,4 +30,49 @@
 	font-size: 16px;
 	line-height: 1.25;
 	color: var(--gray);
+}
+
+.input_box > p,
+.input_box > label {
+	font-family: var(--font-family);
+	font-size: 12px;
+	line-height: 1.33333;
+	color: var(--gray);
+}
+
+.input {
+	background: var(--inputs);
+	border: none;
+	/* border-right: 1px solid var(--gray-light); */
+	border-radius: 12px /* 12px 0 0 12px */;
+	width: 160px;
+	height: 44px;
+	padding: 12px 24px;
+
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.25;
+	color: var(--main);
+}
+
+.input:focus {
+	outline: none;
+}
+
+.input::placeholder {
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.25;
+	color: var(--main);
+}
+
+.input_right {/*  */
+	border-right: 1px solid var(--gray-light);
+	border-radius: 12px 0 0 12px;
+}
+
+.input_left {
+	border-radius: 0 12px 12px 0;
 }

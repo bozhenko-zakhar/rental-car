@@ -6,50 +6,84 @@ import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import clsx from "clsx";
 import css from "./DropDown.module.css";
 
-const options = [
-	"Aston Martin",
-	"Audi",
-	"BMW",
-	"Bentley",
-	"Buick",
-	"Chevrolet",
-	"Chrysler",
-	"GMC",
-	"HUMMER"
-];
 
 type Props = {
+	options: string[]
+	selectId: string
+	selectName: string
 	selectedOption: string
 	setOption: (option: string) => void
 }
 
-const DropDown = ({ selectedOption, setOption }: Props) => {
+const DropDown = ({ options, selectId, selectName, selectedOption, setOption }: Props) => {
 	const [isOpened, setOpened] = useState<boolean>(false);
+	const [activeIndex, setActiveIndex] = useState(0);
+
+	function handleSelectSwithing(event: React.KeyboardEvent) {
+		if (event.key === "ArrowDown") {
+			if (activeIndex === options.length) return
+			else if (activeIndex !== 0) {
+				setOption(options[activeIndex]);
+				setActiveIndex(activeIndex + 1);
+				return
+			} 
+
+			setOption(options[activeIndex]);
+			setActiveIndex(activeIndex + 1);
+		} else if (event.key === "ArrowUp") {
+			if (activeIndex - 1 === 0) return
+			
+			setActiveIndex(activeIndex - 1);
+			setOption(options[activeIndex - 2])
+		}
+
+		if (event.key === "Enter") {
+			setOption(options[activeIndex-1]);
+			setOpened(!isOpened)
+		}
+	}
 
 	return (
 		<div>
-			<div onClick={() => setOpened(!isOpened)} className={css.select}>
+			<div
+				role="combobox"
+				tabIndex={0}
+				aria-labelledby={`${selectId}-${selectName}`}
+				aria-expanded={isOpened}
+				aria-controls={`${selectId}-${selectName}-list`}
+				aria-activedescendant={selectedOption ?? undefined}
+				
+				onClick={() => setOpened(!isOpened)}
+				className={css.select}
+				onKeyDown={handleSelectSwithing}
+			>
 				<p>{selectedOption}</p>
 				{isOpened ? <BsChevronUp /> : <BsChevronDown />}
 			</div>
 
-			{ isOpened &&
+			{isOpened &&
 			<div className={css.scroll_fix}>
-				<ul className={css.menu}>
-					<div className={css.scroll_bar}>
-						{
-							options.map(option => (
-								<li
-									key={option}
-									onClick={() => {
-										setOption(option);
-										setOpened(false);
-									}}
-									className={clsx(selectedOption === option && css.choise_made)}
-								>{option}</li>
-							))
-						}
-					</div>
+				<ul
+					role="listbox"
+					id={`${selectId}-${selectName}-list`} // id={`${selectId}-option-${option}`}
+					className={css.menu}
+				>
+					{
+						options.map(option => (
+							<li
+								key={option}
+								id={`${selectId}-${option}`}
+								role="option"
+								aria-selected={selectedOption === option}
+								onClick={() => {
+									setOption(option);
+									setActiveIndex(options.indexOf(option) + 1)
+									setOpened(false);
+								}}
+								className={clsx(selectedOption === option && css.choise_made)}
+							>{option}</li>
+						))
+					}
 				</ul>
 			</div>
 			}
