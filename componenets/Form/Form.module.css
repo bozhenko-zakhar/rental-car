@@ -1,0 +1,17 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.form input {
+	margin-bottom: 16px;
+}
+
+.form textarea {
+	margin-bottom: 8px;
+}
+
+.form button {
+	margin-inline: auto;
+}

@@ -16,7 +16,7 @@ const CarCard = () => {
 				/>
 			</div>
 			<div className={css.name}>
-				<p>Buick <span className={css.mark_name}>Enclave,</span> 2008</p>
+				<h3>Buick <span className={css.mark_name}>Enclave,</span> 2008</h3>
 				<p>$50</p>
 			</div>
 			<div className={css.descr}>

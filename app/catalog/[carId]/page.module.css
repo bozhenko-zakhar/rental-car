@@ -1,0 +1,41 @@
+.container {
+	display: flex;
+	gap: 72px;
+}
+
+.left_side {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 640px;
+	gap: 40px;
+}
+
+.image_container {
+	border-radius: 14px;
+	margin-bottom: 16px;
+	overflow: hidden;
+
+	background: linear-gradient(180deg, rgba(18, 20, 23, 0.5) 0%, rgba(18, 20, 23, 0.5) 100%);
+}
+
+.image {
+	object-fit: cover;
+}
+
+.form_container {
+	border: 1px solid var(--gray-light);
+	border-radius: 10px;
+	padding: 32px;
+}
+
+.form_container h2 {
+	margin-bottom: 8px;
+}
+.form_container p {
+	margin-bottom: 24px;
+}
+
+
+.right_side {
+	width: 488px;
+}

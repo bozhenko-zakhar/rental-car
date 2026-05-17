@@ -51,8 +51,9 @@ const DropDown = ({ options, selectId, selectName, selectedOption, setOption }: 
 				aria-controls={`${selectId}-${selectName}-list`}
 				aria-activedescendant={selectedOption ?? undefined}
 				
-				onClick={() => setOpened(!isOpened)}
 				className={`${css.select} ${selectName === "price" ? css.second : css.first}`}
+				onClick={() => setOpened(!isOpened)}
+				onBlur={() => setOpened(false)}
 				onKeyDown={handleSelectSwithing}
 			>
 				<p>{selectedOption}</p>

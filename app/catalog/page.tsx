@@ -11,7 +11,7 @@ const CatalogPage = () => {
 			<div className={css.container}>
 				<SearchBlock /> 
 
-				<div className={css.cards_container}>
+				<ul className={css.cards_container}>
 					<CarCard />
 					<CarCard />
 					<CarCard />
@@ -28,7 +28,7 @@ const CatalogPage = () => {
 					<CarCard />
 					<CarCard />
 					<CarCard />
-				</div>
+				</ul>
 
 				<div className={css.loadmore}>
 					<Button isLarge={false} leadMore={true}>Load more</Button>

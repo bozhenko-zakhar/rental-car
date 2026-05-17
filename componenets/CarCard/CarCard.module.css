@@ -22,7 +22,10 @@
 	justify-content: space-between;
 
 	margin-bottom: 8px;
+}
 
+.name h3,
+.name p {
 	font-family: var(--font-family);
 	font-weight: 500;
 	font-size: 16px;
