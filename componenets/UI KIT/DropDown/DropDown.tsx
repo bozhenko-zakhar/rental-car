@@ -35,12 +35,10 @@ const DropDown = ({ options, selectId, selectName, selectedOption, setOption }: 
 			
 			setActiveIndex(activeIndex - 1);
 			setOption(options[activeIndex - 2])
-		}
-
-		if (event.key === "Enter") {
+		} else if (event.key === "Enter" || event.key === " ") {
 			setOption(options[activeIndex-1]);
 			setOpened(!isOpened)
-		}
+		} else setOpened(false)
 	}
 
 	return (

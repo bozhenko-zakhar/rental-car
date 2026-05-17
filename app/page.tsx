@@ -1,6 +1,6 @@
 "use client"
 
-import Button from "@/componenets/UI KIT/Button/Button";
+import UiLink from "@/componenets/UI KIT/UiLink/UiLink";
 import css from "./page.module.css"
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
 				<p>Reliable and budget-friendly rentals for any journey</p>
 			</div>
 			
-			<Button>View Catalog</Button>
+			<UiLink href="/catalog">View Catalog</UiLink>
     </section>
   );
 }

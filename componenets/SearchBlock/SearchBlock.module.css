@@ -6,6 +6,7 @@
 
 	max-width: 924px;
 	margin-inline: auto;
+	margin-bottom: 56px;
 }
 
 .select {
@@ -35,6 +36,10 @@
 	font-size: 16px;
 	line-height: 1.25;
 	color: var(--gray);
+}
+
+.input_box {
+	position: relative;
 }
 
 .input_box > label {

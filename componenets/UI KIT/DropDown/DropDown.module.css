@@ -24,6 +24,8 @@
 }
 
 .scroll_fix {
+	position: absolute;
+	
 	max-width: 204px;
 	border-radius: 12px;	
 	margin-top: 4px;
