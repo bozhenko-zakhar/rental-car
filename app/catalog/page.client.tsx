@@ -59,6 +59,8 @@ const CatalogPageClient = () => {
 	const hasCars = cars.length > 0;
 	const showNoResults = isFetched && !isError && !hasCars;
 	
+console.log(cars)
+
 	return (
 		<section className={css.catalog}>
 			<div className={css.container}>

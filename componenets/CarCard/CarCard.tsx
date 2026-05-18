@@ -1,11 +1,12 @@
-import Image from "next/image";
-import Link from "next/link";
-import { BsHeart, BsHeartFill } from "react-icons/bs";
+"use client"
 
+import Image from "next/image";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
 
 import { Location } from "@/types/car";
 
 import css from "./CarCard.module.css"
+import { useState } from "react";
 
 type Props = {
 	id: string;
@@ -32,10 +33,16 @@ const CarCard = ({
 	location,
 	mileage
 }: Props) => {
+	const [isFilled, fillHeart] = useState<boolean>(false);
+
 	return (
 		<li className={css.container}>
-			<div className={css.icon_container}>
-				<BsHeart fill="white"/>
+			<div onClick={() => fillHeart(!isFilled)} className={css.icon_container}>
+				{
+					isFilled
+						? <BsHeartFill fill="#3470FF" />
+						: <BsHeart fill="white"/>
+				}
 			</div>
 			<div className={css.image_container}>
 				<Image
