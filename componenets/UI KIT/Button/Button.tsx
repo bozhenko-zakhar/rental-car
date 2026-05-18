@@ -6,6 +6,7 @@ type Props = {
 	children: React.ReactNode,
 	type?: "submit" | "button" | "reset" | undefined,
 	onClick?: (event: React.MouseEvent) => void,
+	disabled?: boolean,
 	isLarge?: boolean,
 	leadMore?: boolean,
 }
@@ -13,6 +14,7 @@ type Props = {
 const Button = ({
 	type = "submit",
 	onClick = (e) => e.preventDefault(),
+	disabled = false,
 	isLarge = true,
 	leadMore = false,
 	children
@@ -21,6 +23,7 @@ const Button = ({
 		<button
 			type={type}
 			onClick={onClick}
+			disabled={disabled}
 			className={`${css.button} ${isLarge ? css.button_large : css.button_small} ${leadMore && css.loadmore}`}>
 			{children}
 		</button>

@@ -8,7 +8,6 @@ type Props = {
 
 const CarDetailsPage = async ({ params }: Props) => {
 	const { carId } = await params;
-	console.log(carId)
 
 	const queryClient = new QueryClient();
 	queryClient.prefetchQuery({
