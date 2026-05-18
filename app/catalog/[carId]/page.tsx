@@ -2,7 +2,7 @@ import { QueryClient, HydrationBoundary, dehydrate } from "@tanstack/react-query
 
 import CatalogPageClient from "./page.client";
 
-import { fetchCarById } from "@/lib/clientApi";
+import { fetchCarById } from "@/lib/api/clientApi";
 
 type Props = {
 	params: Promise<{carId: string}>

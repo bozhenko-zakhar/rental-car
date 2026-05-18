@@ -61,7 +61,7 @@ const CarCard = ({
 					<span>{mileage} km</span>
 				</p>
 			</div>
-			<Link className={css.link} href={`/catalog/${id}`}>Read more</Link>
+			<a target="_blank" className={css.link} href={`/catalog/${id}`}>Read more</a>
 		</li>
 	);
 };

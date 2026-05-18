@@ -8,7 +8,7 @@ import Button from "../UI KIT/Button/Button";
 
 import css from "./SearchBlock.module.css"
 
-import { fetchFilters } from "@/lib/clientApi";
+import { fetchFilters } from "@/lib/api/clientApi";
 
 type Props = {
 	brand: string | undefined,
@@ -51,14 +51,8 @@ const SearchBlock = (props: Props) => {
     const rawValue = e.target.value.replace(/,/g, "");
 
     if (!rawValue) {
-			if (fieldName === "min") {
-				setTempMinMileage("");
-				props.setMinMileage(undefined);
-			}
-			else {
-				setTempMaxMileage("");
-				props.setMaxMileage(undefined)
-			}
+			if (fieldName === "min") setTempMinMileage("");
+			else setTempMaxMileage("");
       return;
     }
 

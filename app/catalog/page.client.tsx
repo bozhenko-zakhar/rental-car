@@ -7,7 +7,7 @@ import SearchBlock from "@/componenets/SearchBlock/SearchBlock";
 import Button from "@/componenets/UI KIT/Button/Button";
 import CarCard from "@/componenets/CarCard/CarCard";
 
-import { fetchCars } from "@/lib/clientApi";
+import { fetchCars } from "@/lib/api/clientApi";
 
 import css from "./page.client.module.css"
 
@@ -73,9 +73,9 @@ const CatalogPageClient = () => {
 					setMaxMileage={setMiliageTo}
 				/> 
 
-				{isLoading && <p>Loading data, please wait...</p>}
-				{isError && <p>Whoops, something went wrong! Please try again!</p>}
-				{showNoResults && <p>No articles found. Try another search.</p>}
+				{isLoading && <p className={css.alert}>Loading data, please wait...</p>}
+				{isError && <p className={css.alert}>Whoops, something went wrong! Please try again!</p>}
+				{showNoResults && <p className={css.alert}>No cars found. Try another search.</p>}
 				{hasCars && (
 				<>
 					<ul className={css.cards_container}>

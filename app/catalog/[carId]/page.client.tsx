@@ -8,14 +8,14 @@ import Image from "next/image";
 
 import Form from "@/componenets/Form/Form";
 
-import { fetchCarById } from "@/lib/clientApi";
+import { fetchCarById } from "@/lib/api/clientApi";
 
 import css from "./page.client.module.css"
 
 const CarDetailsClientPage = () => {
 	const { carId } = useParams<{carId: string}>();
 
-	const { data: car } = useQuery({
+	const { data: car, isError, isLoading, isFetched } = useQuery({
 		queryKey: ['car', carId],
 		queryFn: () => fetchCarById({id: carId}),
 		placeholderData: keepPreviousData,
@@ -40,7 +40,7 @@ const CarDetailsClientPage = () => {
 					<h3>Book your car now</h3>
 					<p>Stay connected! We are always ready to help you.</p>
 					
-					<Form />
+					<Form carId={carId} />
 				</div>
 			</div>
 			<div className={css.right_side}>
