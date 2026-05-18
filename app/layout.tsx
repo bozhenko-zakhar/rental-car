@@ -1,6 +1,7 @@
 import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/componenets/Header/Header";
+import TanStackProvider from "@/componenets/TanStackProvider/TanStackProvider";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -24,8 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
 			<body className={`${manrope.variable} ${inter.variable}`}>
-				<Header />
-				{children}
+				<TanStackProvider>
+					<Header />
+					{children}
+				</TanStackProvider>
 			</body>
     </html>
   );

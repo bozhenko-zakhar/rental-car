@@ -3,7 +3,11 @@
 	flex-direction: column;
 
 	position: relative;
-	min-width: calc((100% - 32px * 3) / 4);
+	flex-basis: calc((100% - 32px * 3) / 4);
+}
+
+.container a {
+	margin-top: auto;
 }
 
 .icon_container {
