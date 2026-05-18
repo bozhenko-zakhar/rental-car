@@ -1,26 +1,46 @@
 "use client"
 
+import { useInfiniteQuery } from "@tanstack/react-query";
+import { useState } from "react";
+
 import SearchBlock from "@/componenets/SearchBlock/SearchBlock";
-import css from "./page.client.module.css"
 import Button from "@/componenets/UI KIT/Button/Button";
-import { keepPreviousData, useInfiniteQuery, useQuery } from "@tanstack/react-query";
-import { fetchCars } from "@/lib/clientApi";
 import CarCard from "@/componenets/CarCard/CarCard";
 
+import { fetchCars } from "@/lib/clientApi";
+
+import css from "./page.client.module.css"
+
 const CatalogPageClient = () => {
+	const [selectedBrand, setBrand] = useState<string | undefined>(undefined);
+	const [selectedPrice, setPrice] = useState<number | undefined>(undefined);
+	const [miliageFrom, setMiliageFrom] = useState<number | undefined>(undefined);
+	const [miliageTo, setMiliageTo] = useState<number | undefined>(undefined);
+
 	const {
 		data,
 		fetchNextPage,
 		hasNextPage,
-		isFetching,
 		isFetchingNextPage,
 		isError,
 		isLoading,
 		isFetched,
 	} = useInfiniteQuery({
-		queryKey: ['cars'],
+		queryKey: [
+			'cars',
+			selectedBrand,
+			selectedPrice,
+			miliageFrom,
+			miliageTo
+		],
 		queryFn: ({ pageParam }) => {
-			return fetchCars({page: pageParam});
+			return fetchCars({
+				brand: selectedBrand === "All" ? undefined : selectedBrand,
+				price: selectedPrice,
+				minMileage: miliageFrom,
+				maxMileage: miliageTo,
+				page: pageParam
+			});
 		},
 		initialPageParam: 1,
 		getNextPageParam: (lastResponse) => {
@@ -42,7 +62,16 @@ const CatalogPageClient = () => {
 	return (
 		<section className={css.catalog}>
 			<div className={css.container}>
-				<SearchBlock /> 
+				<SearchBlock
+					brand={selectedBrand}
+					setBrand={setBrand}
+					price={selectedPrice}
+					setPrice={setPrice}
+					minMileage={miliageFrom}
+					setMinMileage={setMiliageFrom}
+					maxMileage={miliageTo}
+					setMaxMileage={setMiliageTo}
+				/> 
 
 				{isLoading && <p>Loading data, please wait...</p>}
 				{isError && <p>Whoops, something went wrong! Please try again!</p>}
@@ -72,7 +101,6 @@ const CatalogPageClient = () => {
 					<div className={css.loadmore}>
 						<Button
 							onClick={() => fetchNextPage()}
-							disabled={!hasNextPage || isFetching}
 							isLarge={false}
 							leadMore={true}
 						>

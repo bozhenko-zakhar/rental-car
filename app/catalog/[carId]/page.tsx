@@ -1,5 +1,7 @@
 import { QueryClient, HydrationBoundary, dehydrate } from "@tanstack/react-query";
+
 import CatalogPageClient from "./page.client";
+
 import { fetchCarById } from "@/lib/clientApi";
 
 type Props = {

@@ -1,8 +1,11 @@
 import Image from "next/image";
-import css from "./CarCard.module.css"
-import { BsHeart, BsHeartFill } from "react-icons/bs";
-import { Location } from "@/types/car";
 import Link from "next/link";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
+
+
+import { Location } from "@/types/car";
+
+import css from "./CarCard.module.css"
 
 type Props = {
 	id: string;

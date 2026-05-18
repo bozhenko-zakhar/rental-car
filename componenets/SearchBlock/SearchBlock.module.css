@@ -58,7 +58,7 @@
 	border-radius: 12px;
 	width: 160px;
 	height: 44px;
-	padding: 12px 24px;
+	padding-block: 12px;
 
 	font-family: var(--font-family);
 	font-weight: 500;
@@ -71,19 +71,40 @@
 	outline: none;
 }
 
-.input::placeholder {
+.input_wrapper {
+	display: inline;
+	position: relative;
+}
+
+.input_wrapper::before {
+	position: absolute;
+	left: 24px;
+	top: 45%;
+	transform: translateY(-50%);
+
 	font-family: var(--font-family);
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 1.25;
 	color: var(--main);
+	color: var(--main);
 }
 
-.input_right {/*  */
+.input_wrapper.from::before {
+	content: "From";
+}
+
+.input_wrapper.to::before {
+	content: "To";
+}
+
+.input_right {
+	padding-inline: 64.6px 24px;
 	border-right: 1px solid var(--gray-light);
 	border-radius: 12px 0 0 12px;
 }
 
 .input_left {
+	padding-inline: 45.2px;
 	border-radius: 0 12px 12px 0;
 }

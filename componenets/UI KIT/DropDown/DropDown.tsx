@@ -7,15 +7,16 @@ import clsx from "clsx";
 import css from "./DropDown.module.css";
 
 
-type Props = {
-	options: string[]
+type Props<T> = {
+	options: T[]
 	selectId: string
 	selectName: string
-	selectedOption: string
-	setOption: (option: string) => void
+	selectedOption: T | undefined
+	setOption: (option: T) => void
 }
 
-const DropDown = ({ options, selectId, selectName, selectedOption, setOption }: Props) => {
+// extends обмежує допустимі типи
+const DropDown = <T extends string | number>({ options, selectId, selectName, selectedOption, setOption }: Props<T>) => {
 	const [isOpened, setOpened] = useState<boolean>(false);
 	const [activeIndex, setActiveIndex] = useState(0);
 
@@ -49,14 +50,24 @@ const DropDown = ({ options, selectId, selectName, selectedOption, setOption }: 
 				aria-labelledby={`${selectId}-${selectName}`}
 				aria-expanded={isOpened}
 				aria-controls={`${selectId}-${selectName}-list`}
-				aria-activedescendant={selectedOption ?? undefined}
+				aria-activedescendant={String(selectedOption) ?? undefined}
 				
 				className={`${css.select} ${selectName === "price" ? css.second : css.first}`}
 				onClick={() => setOpened(!isOpened)}
 				onBlur={() => setOpened(false)}
 				onKeyDown={handleSelectSwithing}
 			>
-				<p>{selectedOption}</p>
+				<p>
+					{
+						selectName === "price"
+							? selectedOption
+								? "To $" + selectedOption
+								: "Choose a price"
+							: selectedOption
+								? selectedOption
+								: "Choose a brand"
+					}
+				</p>
 				{isOpened ? <BsChevronUp /> : <BsChevronDown />}
 			</div>
 

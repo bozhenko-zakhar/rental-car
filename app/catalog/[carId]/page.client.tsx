@@ -1,15 +1,16 @@
 "use client"
 
-import Image from "next/image";
-import { BsCalendar2Week, BsCarFront, BsFuelPump, BsGear, BsCheckCircle } from "react-icons/bs";
-import { PiMapPinThin } from "react-icons/pi";
-
-import css from "./page.client.module.css"
-import Form from "@/componenets/Form/Form";
-import { fetchCarById } from "@/lib/clientApi";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
+import { BsCalendar2Week, BsCarFront, BsFuelPump, BsGear, BsCheckCircle } from "react-icons/bs";
+import { PiMapPinThin } from "react-icons/pi";
+import Image from "next/image";
 
+import Form from "@/componenets/Form/Form";
+
+import { fetchCarById } from "@/lib/clientApi";
+
+import css from "./page.client.module.css"
 
 const CarDetailsClientPage = () => {
 	const { carId } = useParams<{carId: string}>();
