@@ -9,13 +9,11 @@ import CarCard from "@/componenets/CarCard/CarCard";
 
 const CatalogPageClient = () => {
 	const { data } = useQuery({
-		queryKey: ['cars'],
+		queryKey: ['car'],
 		queryFn: () => fetchCars({}),
 		placeholderData: keepPreviousData,
 		refetchOnMount: false,
 	});
-
-	console.log(data?.cars)
 	
 	return (
 		<section className={css.catalog}>
@@ -27,6 +25,7 @@ const CatalogPageClient = () => {
 						data?.cars.map(car => (
 							<CarCard
 								key={car.id}
+								id={car.id}
 								year={car.year}
 								brand={car.brand}
 								model={car.model}

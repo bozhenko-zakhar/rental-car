@@ -20,7 +20,6 @@
 .left_side {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	width: 640px;
 	gap: 40px;
 }

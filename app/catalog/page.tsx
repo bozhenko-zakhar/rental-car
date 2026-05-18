@@ -2,7 +2,7 @@ import { QueryClient, HydrationBoundary, dehydrate } from "@tanstack/react-query
 import CatalogPageClient from "./page.client";
 import { fetchCars } from "@/lib/clientApi";
 
-const CatalogPage = () => {
+const CatalogPage = async () => {
 	const queryClient = new QueryClient();
 
 	queryClient.prefetchQuery({

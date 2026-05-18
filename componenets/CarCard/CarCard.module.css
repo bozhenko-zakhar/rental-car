@@ -77,3 +77,29 @@
 .descr p:last-child span:last-child {
 	border-right: none;
 }
+
+.link {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	width: 276px;
+	height: 44px;
+
+	background: var(--button);
+	border-radius: 12px;
+	padding-block: 12px;
+	margin-inline: auto;
+
+	font-family: var(--font-family);
+	font-weight: 600;
+	text-decoration: none;
+	line-height: 1.25;
+	color: var(--white);
+
+	cursor: pointer;
+}
+
+.link:hover {
+	background: var(--button-hover);
+}

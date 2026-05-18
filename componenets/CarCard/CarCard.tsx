@@ -1,10 +1,11 @@
 import Image from "next/image";
 import css from "./CarCard.module.css"
-import UiLink from "../UI KIT/UiLink/UiLink";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { Location } from "@/types/car";
+import Link from "next/link";
 
 type Props = {
+	id: string;
 	year: number;
 	brand: string;
 	model: string;
@@ -17,6 +18,7 @@ type Props = {
 }
 
 const CarCard = ({
+	id,
 	year,
 	brand,
 	model,
@@ -56,7 +58,7 @@ const CarCard = ({
 					<span>{mileage} km</span>
 				</p>
 			</div>
-			<UiLink href="/catalog/1">Read more</UiLink>
+			<Link className={css.link} href={`/catalog/${id}`}>Read more</Link>
 		</li>
 	);
 };

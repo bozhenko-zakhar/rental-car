@@ -17,14 +17,28 @@ type FetchCarsResponse = {
 	totalPages: number;
 }
 
+type fetchCarByIdParams = {
+	id: string;
+}
+
 export async function fetchCars({ ...params }: FetchCarsParams): Promise<FetchCarsResponse> {
 	// це воно для того, щоби передати тільки ті параметри, які є в аргументах
 	const filteredParams = Object.fromEntries(
 		Object.entries(params).filter(([, value]) => value !== undefined)
 	);
 
-	const response = await nextServer.get("/cars", {
+	const response = await nextServer.get<FetchCarsResponse>("/cars", {
 		params: filteredParams
+	});
+
+	return response.data;
+}
+
+export async function fetchCarById({ id }: fetchCarByIdParams): Promise<Car> {
+	const response = await nextServer.get<Car>(`/cars/${id}`, {
+		params: {
+			id: id
+		}
 	});
 
 	return response.data;

@@ -1,7 +1,7 @@
 "use client"
 
-import UiLink from "@/componenets/UI KIT/UiLink/UiLink";
 import css from "./page.module.css"
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,7 +11,11 @@ export default function Home() {
 				<p>Reliable and budget-friendly rentals for any journey</p>
 			</div>
 			
-			<UiLink href="/catalog">View Catalog</UiLink>
+			<Link
+				href="/catalog"
+				className={css.link}>
+				View Catalog
+			</Link >
     </section>
   );
 }

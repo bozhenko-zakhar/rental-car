@@ -4,6 +4,7 @@ export interface Car {
 	brand: string;
 	model: string;
 	type: string;
+	stockNumber: string;
 	img: string;
 	description: string;
 	fuelConsumption: string;
