@@ -1,10 +1,11 @@
-import { Manrope, Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
+import { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 
 import Header from "@/componenets/Header/Header";
 import TanStackProvider from "@/componenets/TanStackProvider/TanStackProvider";
 
 import "./globals.css";
-import { Toaster } from "react-hot-toast";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -12,6 +13,11 @@ const manrope = Manrope({
   variable: "--font-family",
   display: "swap",
 });
+
+
+export const metadata: Metadata = {
+  title: "RentalCar"
+};
 
 export default function RootLayout({
   children,

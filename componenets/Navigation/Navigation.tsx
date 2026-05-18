@@ -16,7 +16,7 @@ const Navigation = () => {
 				<li className={clsx(css.nav_item, {[css.active]: pathname==="/"})}>
 					<Link href="/">Home</Link>
 				</li>
-				<li className={clsx(css.nav_item, {[css.active]: pathname.startsWith ("/catalog")})}> 
+				<li className={clsx(css.nav_item, {[css.active]: pathname==="/catalog"})}> 
 					<Link href="/catalog">
 						Catalog
 					</Link>

@@ -158,3 +158,11 @@ p.price {
 	align-items: center;
 	gap: 8px
 }
+
+.alert {
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.25;
+	color: var(--gray);
+}

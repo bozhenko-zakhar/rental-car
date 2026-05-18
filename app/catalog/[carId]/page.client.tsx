@@ -15,13 +15,12 @@ import css from "./page.client.module.css"
 const CarDetailsClientPage = () => {
 	const { carId } = useParams<{carId: string}>();
 
-	const { data: car, isError, isLoading, isFetched } = useQuery({
+	const { data: car, isError, isLoading } = useQuery({
 		queryKey: ['car', carId],
 		queryFn: () => fetchCarById({id: carId}),
 		placeholderData: keepPreviousData,
 		refetchOnMount: false,
 	});
-	
 
 	return (
 		<div className={css.container}>
@@ -43,6 +42,12 @@ const CarDetailsClientPage = () => {
 					<Form carId={carId} />
 				</div>
 			</div>
+
+			{isLoading && <p className={css.alert}>Loading data, please wait...</p>}
+			{isError && <p className={css.alert}>Whoops, something went wrong! Please try again!</p>}
+
+
+			{car &&
 			<div className={css.right_side}>
 				<div className={css.details}>
 					<div className={css.title}>
@@ -112,6 +117,7 @@ const CarDetailsClientPage = () => {
 					</div>
 				</div>
 			</div>
+			}
 		</div>
 	)
 };
