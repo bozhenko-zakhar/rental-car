@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚗 **RentalCar — платформа для тимчасового найму автомобілів**
 
-## Getting Started
+**RentalCar** — це front-end веб-застосунок для тимчасового найму автомобілів. Основна ідея проєкту — надати користувачу швидкий та зручний спосіб знайти авто для оренди, переглянути детальну інформацію про нього та залишити заявку на бронювання.
 
-First, run the development server:
+На головній сторінці користувач бачить сучасний hero-блок із переходом до каталогу автомобілів. У каталозі доступна система фільтрації за брендом, пробігом та вартістю оренди, а самі картки автомобілів підвантажуються поступово через infinite scroll.
+
+Після вибору автомобіля користувач переходить на окрему сторінку з повною інформацією про машину, технічними характеристиками, описом комплектації та формою для створення оффера / заявки на оренду.
+
+---
+
+🛠️ **Технології та архітектура**
+
+Front-end частина побудована на **React + Vite** з використанням **TypeScript**, **React Router**, **Axios**, **TanStack Query**, а також **HTML5** і **CSS Modules** для побудови інтерфейсу та стилізації.
+
+Для роботи з асинхронними запитами та кешуванням даних використовується **TanStack Query**, зокрема `useInfiniteQuery` для поступового підвантаження автомобілів у каталозі. Це дозволило реалізувати плавний UX та оптимізувати завантаження великої кількості даних.
+
+Також у проєкті використовувались **REST API**, **Git/GitHub**, **ESLint**, **Prettier**, **Postman** та **Vercel**.
+
+---
+
+✨ **Основні можливості**
+
+* перегляд каталогу автомобілів;
+* фільтрація за брендом, mileage та вартістю;
+* infinite loading через `useInfiniteQuery`;
+* детальна сторінка автомобіля;
+* форма створення заявки на оренду;
+* адаптивний інтерфейс;
+* взаємодія клієнта і сервера через REST API.
+
+---
+
+🚀 **Запуск проєкту**
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+📌 **Висновок**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Цей проєкт став хорошою практикою роботи із сучасним front-end стеком. Під час розробки працював з asynchronous state management, infinite queries, REST API та побудовою взаємодію між клієнтом і сервером.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Намагався зробити проєкт не тільки технічно якісним, а й максимально зручним для користувача, щоб процес пошуку та оренди автомобіля був швидким, зрозумілим і комфортним 🚘
