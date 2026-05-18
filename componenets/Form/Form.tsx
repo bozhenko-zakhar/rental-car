@@ -10,9 +10,11 @@ const Form = () => {
 
 	return (
 		<form className={css.form}>
-			<input />
-			<input />
-			<textarea></textarea>
+			<input className={css.input} placeholder="Name*" />
+			<input className={css.input} placeholder="Email*" />
+			<div className={css.scroll_fix}>
+				<textarea className={css.textarea} placeholder="Comment"></textarea>
+			</div>
 			<Button
 				onClick={handleSubmit}
 				isLarge={false}

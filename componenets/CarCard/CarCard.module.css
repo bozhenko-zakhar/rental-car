@@ -1,7 +1,15 @@
 .container {
 	display: flex;
 	flex-direction: column;
+
+	position: relative;
 	min-width: calc((100% - 32px * 3) / 4);
+}
+
+.icon_container {
+	position: absolute;
+	top: 16;
+	right: 16;
 }
 
 .image_container {

@@ -42,7 +42,7 @@ const DropDown = ({ options, selectId, selectName, selectedOption, setOption }: 
 	}
 
 	return (
-		<div>
+		<>
 			<div
 				role="combobox"
 				tabIndex={0}
@@ -61,7 +61,7 @@ const DropDown = ({ options, selectId, selectName, selectedOption, setOption }: 
 			</div>
 
 			{isOpened &&
-			<div className={css.scroll_fix}>
+				<div className={`${css.scroll_fix} ${selectName === "price" ? css.second : css.first}`}>
 				<ul
 					role="listbox"
 					id={`${selectId}-${selectName}-list`}
@@ -74,19 +74,19 @@ const DropDown = ({ options, selectId, selectName, selectedOption, setOption }: 
 								id={`${selectId}-option-${option}`}
 								role="option"
 								aria-selected={selectedOption === option}
-								onClick={() => {
+								className={clsx(selectedOption === option && css.choise_made)}
+								onMouseDown={() => {
 									setOption(option);
 									setActiveIndex(options.indexOf(option) + 1)
-									setOpened(false);
+									setOpened(false)
 								}}
-								className={clsx(selectedOption === option && css.choise_made)}
 							>{option}</li>
 						))
 					}
 				</ul>
 			</div>
 			}
-		</div>
+		</>
 	)
 };
 

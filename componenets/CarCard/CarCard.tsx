@@ -1,11 +1,15 @@
 import Image from "next/image";
 import css from "./CarCard.module.css"
 import UiLink from "../UI KIT/UiLink/UiLink";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
 
 
 const CarCard = () => {
 	return (
 		<div className={css.container}>
+			<div className={css.icon_container}>
+				<BsHeart fill="white"/>
+			</div>
 			<div className={css.image_container}>
 				<Image
 					className={css.image}

@@ -1,18 +1,32 @@
 .container {
 	display: flex;
 	gap: 72px;
+
+	max-width: 1440px;
+	margin-inline: auto;
+	padding-block: 84px 104px;
+	padding-inline: 120px;
+	justify-content: center;
+}
+
+@media (max-width: 1439px) {
+	.container {
+		flex-direction: column;
+		align-items: center;
+		gap: 72px;
+	}
 }
 
 .left_side {
 	display: flex;
 	flex-direction: column;
-	flex-basis: 640px;
+	justify-content: center;
+	width: 640px;
 	gap: 40px;
 }
 
 .image_container {
 	border-radius: 14px;
-	margin-bottom: 16px;
 	overflow: hidden;
 
 	background: linear-gradient(180deg, rgba(18, 20, 23, 0.5) 0%, rgba(18, 20, 23, 0.5) 100%);
@@ -28,14 +42,120 @@
 	padding: 32px;
 }
 
-.form_container h2 {
+.form_container h3 {
+	font-family: var(--font-family);
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 1.2;
+	color: var(--main);
+
 	margin-bottom: 8px;
 }
+
 .form_container p {
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.25;
+	color: var(--gray);
+
 	margin-bottom: 24px;
 }
 
-
 .right_side {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
 	width: 488px;
+}
+
+.right_side p,
+.right_side li {
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.25;
+	color: var(--main);
+}
+
+.right_side h3 {
+	font-family: var(--font-family);
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 1.2;
+	color: var(--main);
+}
+
+.details {
+	margin-bottom: 68px;
+}
+
+.title {
+	display: flex;
+	align-items: baseline;
+	gap: 16px;
+
+	margin-bottom: 8px;
+}
+
+.title h2 {
+	font-family: var(--font-family);
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 1.33333;
+	/* text-align: center; */
+	color: var(--main);
+}
+
+.title p {
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.25;
+	color: var(--gray);
+}
+
+.state {
+	display: flex;
+	gap: 16px;
+
+	margin-bottom: 16px;
+}
+
+.state p {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+p.price {
+	font-family: var(--font-family);
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 1.33333;
+	color: var(--button);
+
+	margin-bottom: 32px;
+}
+
+.car_info {
+	display: flex;
+	flex-direction: column;
+	gap: 110px;
+}
+
+.car_info h3 {
+	margin-bottom: 20px;
+}
+
+.car_info ul {
+	display: flex;
+	flex-direction: column;
+	gap: 16px
+}
+
+.car_info li {
+	display: flex;
+	align-items: center;
+	gap: 8px
 }
