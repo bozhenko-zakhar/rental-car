@@ -58,8 +58,6 @@ const CatalogPageClient = () => {
 	const cars = data?.cars ?? [];
 	const hasCars = cars.length > 0;
 	const showNoResults = isFetched && !isError && !hasCars;
-	
-console.log(cars)
 
 	return (
 		<section className={css.catalog}>
