@@ -1,12 +1,13 @@
 .home {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: calc(100vh - 69px);
+
 	background-image: url("/background.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	padding-top: 436px;
-	padding-right: 329px;
-	padding-bottom: 60px;
-	padding-left: 328px;
 }
 
 .text_container {

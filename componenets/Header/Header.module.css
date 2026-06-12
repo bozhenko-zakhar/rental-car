@@ -1,4 +1,5 @@
 .header {
+	height: 69px;
 	padding-block: 24px;
 	background: var(--badges);
 	border-bottom: 1px solid var(--badges);
