@@ -4,7 +4,7 @@ import { persist } from "zustand/middleware";
 
 type DraftStore = {
 	draft: NewOffer;
-	setDraft: (note: NewOffer) => void;
+	setDraft: (offer: NewOffer) => void;
 	clearDraft: () => void
 }
 

@@ -7,6 +7,7 @@ import { Location } from "@/types/car";
 
 import css from "./CarCard.module.css"
 import { useState } from "react";
+import { useLikedCarsStore } from "@/lib/store/likedCarsStore";
 
 type Props = {
 	id: string;
@@ -33,11 +34,27 @@ const CarCard = ({
 	location,
 	mileage
 }: Props) => {
-	const [isFilled, fillHeart] = useState<boolean>(false);
+	
+	const { likedCars, setLikedCars } = useLikedCarsStore();
+
+	const [isFilled, fillHeart] = useState<boolean>(likedCars.some((carId: string) => carId === id));
+
+	function handleLikeClick(id: string): void {
+		console.log(likedCars.some((carId: string) => carId === id));
+		if (isFilled) {
+			const updatdLikedCars: string[] = likedCars.filter((carId: string) => carId !== id)
+			setLikedCars(updatdLikedCars);
+			fillHeart(false);
+		} else {
+			const updatdLikedCars: string[] = [...likedCars, id]
+			setLikedCars(updatdLikedCars);
+			fillHeart(true);
+		}
+	}
 
 	return (
 		<li className={css.container}>
-			<div onClick={() => fillHeart(!isFilled)} className={css.icon_container}>
+			<div onClick={() => handleLikeClick(id)} className={css.icon_container}>
 				{
 					isFilled
 						? <BsHeartFill fill="#3470FF" />
